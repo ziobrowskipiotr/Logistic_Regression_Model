@@ -1,4 +1,0 @@
-run_tests 0 0
-Tests 0 0
----
-Tests
