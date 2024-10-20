@@ -4,15 +4,18 @@ This project implements logistic regression in C++ using SQLite for data storage
 
 ## Table of Contents
 1. [Project Structure](#project-structure)
-2. [Setup Instructions](#setup-instructions)
+2. [About the Dataset](#about-the-dataset)
+3. [Setup Instructions](#setup-instructions)
    - [1. Create the `build` directory](#1-create-the-build-directory)
    - [2. Install required dependencies](#2-install-required-dependencies)
    - [3. Download external dependencies](#3-download-external-dependencies)
    - [4. Unpack downloaded files](#4-unpack-downloaded-files)
-   - [5. Build the project](#5-build-the-project)
-   - [6. Run the project](#6-run-the-project)
-   - [7. Run the tests](#7-run-the-tests)
-3. [Notes](#notes)
+   - [5. Customize Gradient Descent Parameters](#5-customize-gradient-descent-parameters)
+   - [6. Adding Custom Databases](#6-adding-custom-databases)
+   - [7. Build the project](#7-build-the-project)
+   - [8. Run the project](#8-run-the-project)
+   - [9. Run the tests](#9-run-the-tests)
+4. [Notes](#notes)
 
 ## Project Structure
 
@@ -44,6 +47,29 @@ This project implements logistic regression in C++ using SQLite for data storage
 ├── My_Logistic_Regression_Project.exe # Main program executable
 ├── Tests_Project.exe            # Executable for tests
 ```
+## About the Dataset
+
+This dataset originates from 1988 and includes data from four sources: Cleveland, Hungary, Switzerland, and Long Beach V. Although the dataset contains 76 attributes in total, most research and experiments use a subset of 14 key attributes. 
+
+The "target" attribute indicates the presence of heart disease, where 0 denotes no disease and 1 indicates the presence of disease.
+
+### Key Attributes:
+
+- `age`: Age of the patient
+- `sex`: Gender (1 = male, 0 = female)
+- `cp`: Chest pain type (4 types)
+- `trestbps`: Resting blood pressure (in mm Hg)
+- `chol`: Serum cholesterol level (in mg/dl)
+- `fbs`: Fasting blood sugar > 120 mg/dl (1 = true; 0 = false)
+- `restecg`: Resting electrocardiographic results (values 0, 1, 2)
+- `thalach`: Maximum heart rate achieved
+- `exang`: Exercise-induced angina (1 = yes; 0 = no)
+- `oldpeak`: ST depression induced by exercise relative to rest
+- `slope`: The slope of the peak exercise ST segment
+- `ca`: Number of major vessels (0–3) colored by fluoroscopy
+- `thal`: Thalassemia status (0 = normal, 1 = fixed defect, 2 = reversible defect)
+- `target`: Diagnosis of heart disease (0 = no disease, 1 = disease)
+
 ## Setup Instructions
 
 ### 1. Create the `build` directory
@@ -84,7 +110,50 @@ Unzip both `database.zip` and `libs.zip` in the root directory of the project. A
 ├── libs
 │   └── sqlite-amalgamation-3460100
 ```
-### 5. Build the project
+
+### 5. Customize Gradient Descent Parameters
+
+In this project, you can adjust the parameters for logistic regression, such as the learning rate (`alpha`) and the number of iterations, directly in the code.
+
+#### Parameters
+
+- `alpha`: Controls the learning rate of gradient descent.
+- `iterations`: Determines the number of steps gradient descent will take.
+- `k_folds`: Number of folds used in cross-validation.
+
+You can modify these parameters in the `main.cpp` file directly. Below is a code fragment showing how `alpha` and `iterations` are set:
+
+```cpp
+int main() {
+    // Settings for gradient descent
+    double alpha = 0.000001;   // Learning rate
+    int iterations = 1000000;  // Number of iterations
+    int k_folds = 5;           // Number of folds for cross-validation
+```
+
+### 6. Adding Custom Databases
+
+You can add custom SQLite databases for training or testing the logistic regression model. However, these databases **must have the exact same structure and format** as the provided `trening_data.sqlite` and `test_data.sqlite` files.
+
+#### Requirements for Custom Databases:
+- The database must include a table named `tablica`.
+- The table must have the following columns in the correct order:
+  - `age`, `sex`, `cp`, `trestbps`, `chol`, `fbs`, `restecg`, `thalach`, `exang`, `oldpeak`, `slope`, `ca`, `thal`, `target`.
+- The data types and values for each column should follow the format provided in the original datasets:
+  - `age`: integer
+  - `sex`: integer (1 = male, 0 = female)
+  - `cp`: integer (chest pain type)
+  - and so on for all attributes.
+
+#### Example:
+
+If you have a new dataset and want to add it as `my_custom_data.sqlite`, ensure the structure matches exactly with the above schema. You can then initialize and use it in the code like this:
+
+```cpp
+DatabaseOperations db_train("database/my_custom_data.sqlite", &db1);
+```
+
+### 7. Build the project
 
 Run the following commands from the `build` directory (which you created in step 1):
 
@@ -93,7 +162,7 @@ cmake ..
 cmake --build .
 ```
 
-### 6. Run the project
+### 8. Run the project
 
 After building the project, you can run the main program by executing the following command inside the `root` directory:
 
@@ -101,7 +170,7 @@ After building the project, you can run the main program by executing the follow
 ./My_Logistic_Regression_Project
 ```
 
-### 7. Run the tests
+### 9. Run the tests
 
 To run the unit tests, execute the following command inside the `root` directory:
 
