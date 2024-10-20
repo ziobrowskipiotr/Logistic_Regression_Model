@@ -1,6 +1,15 @@
 # My Logistic Regression Project
 
-This project implements logistic regression in C++ using SQLite for data storage and Google Test for unit testing.
+This project implements a logistic regression model in C++ to predict the likelihood of heart disease in patients. The model uses patient data, such as age, gender, blood pressure, and cholesterol levels, stored in an SQLite database. The project also includes unit tests to ensure the accuracy and robustness of the implementation, using Google Test for validation.
+
+The logistic regression model is trained to predict whether a patient has heart disease (binary classification: 0 = no disease, 1 = disease). The data used for training and testing come from a well-known heart disease dataset, and the model is fine-tuned using gradient descent with customizable learning rates and iterations. The project supports cross-validation to improve model performance.
+
+### Key Features:
+- **Logistic Regression**: Binary classification for heart disease prediction.
+- **SQLite Database**: Efficient data storage and retrieval.
+- **Cross-validation**: Ensures model reliability through k-fold validation.
+- **Customizable Hyperparameters**: Users can adjust learning rate (`alpha`) and the number of iterations.
+- **Unit Testing**: Google Test is used to validate the correctness of the model and database operations.
 
 ## Table of Contents
 1. [Project Structure](#project-structure)
