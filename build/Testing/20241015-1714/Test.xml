@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Win32-MSBuild"
+	BuildStamp="20241015-1714-Experimental"
+	Name="Piotrek-laptop"
+	Generator="ctest-3.30.4"
+	CompilerName="C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.41.34120/bin/Hostx64/x64/cl.exe"
+	CompilerVersion="19.41.34123.0"
+	OSName="Windows"
+	Hostname="Piotrek-laptop"
+	OSRelease=" Professional"
+	OSVersion=" (Build 22631)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="13"
+	ProcessorCacheSize="-1"
+	NumberOfLogicalCPU="16"
+	NumberOfPhysicalCPU="8"
+	TotalVirtualMemory="37374"
+	TotalPhysicalMemory="32510"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2304"
+	>
+	<Testing>
+		<StartDateTime>Oct 15 23:46 Central European Daylight Time</StartDateTime>
+		<StartTestTime>1729028802</StartTestTime>
+		<TestList/>
+		<EndDateTime>Oct 15 23:46 Central European Daylight Time</EndDateTime>
+		<EndTestTime>1729028802</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

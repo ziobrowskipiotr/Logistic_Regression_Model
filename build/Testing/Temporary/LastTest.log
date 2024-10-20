@@ -1,0 +1,19 @@
+Start testing: Oct 20 20:45 Central European Daylight Time
+----------------------------------------------------------
+1/1 Testing: Tests
+1/1 Test: Tests
+Command: "C:/Users/piete/Desktop/My_Logistic_Regression_Project/build/Debug/Tests.exe"
+Directory: C:/Users/piete/Desktop/My_Logistic_Regression_Project/build
+"Tests" start time: Oct 20 20:45 Central European Daylight Time
+Output:
+----------------------------------------------------------
+Error: Unable to open the database!
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Failed.
+"Tests" end time: Oct 20 20:45 Central European Daylight Time
+"Tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 20 20:45 Central European Daylight Time

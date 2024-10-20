@@ -1,0 +1,10 @@
+^C:\USERS\PIETE\DESKTOP\MY_LOGISTIC_REGRESSION_PROJECT\BUILD\CMAKEFILES\FEDA8910E9F294B8402E92B795CE0599\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/piete/Desktop/My_Logistic_Regression_Project -BC:/Users/piete/Desktop/My_Logistic_Regression_Project/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/piete/Desktop/My_Logistic_Regression_Project/build/My_Logistic_Regression_Project.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

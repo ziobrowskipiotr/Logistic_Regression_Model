@@ -1,0 +1,10 @@
+^C:\USERS\PIETE\DESKTOP\MY_LOGISTIC_REGRESSION_PROJECT\BUILD\CMAKEFILES\FEDA8910E9F294B8402E92B795CE0599\RUN_TESTS_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
